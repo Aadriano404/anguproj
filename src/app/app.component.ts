@@ -7,24 +7,23 @@ import { HomeComponent } from './home/home.component';
   selector: 'app-root',
   standalone: true,
   imports: [HomeComponent],
-  //templateUrl: './app.component.html',
-  //styleUrl: './app.component.css',
   template: `
-    <main>
-      <header class="brand-name">
-        <img
-          class="brand-logo"
-          src="/favicon.ico"
-          alt="logo"
-          aria-hidden="true"
-        />
-      </header>
-      <section class="content">
-        <app-home></app-home>
-      </section>
-    </main>
+  <main>
+  <header class="brand-name">
+  <img
+  class="brand-logo"
+  src="/favicon.ico"
+  alt="logo"
+  aria-hidden="true"
+  />
+  </header>
+  <section class="content">
+  <app-home></app-home>
+  </section>
+  </main>
   `,
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  title = 'anguproj';
+  title = 'homes';
 }

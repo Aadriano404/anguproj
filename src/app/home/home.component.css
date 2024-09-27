@@ -1,0 +1,72 @@
+:root {
+  --primary-color: rgb(62, 8, 124);
+  --secondary-color: rgba(163, 59, 132, 0.658);
+}
+
+.results {
+  display: grid;
+  column-gap: 14px;
+  row-gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+  margin-top: 50px;
+  justify-content: space-around;
+}
+
+input[type="text"] {
+  border: solid 1px;
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 4px;
+  display: inline-block;
+  width: 30%;
+  background-color: rgba(128, 128, 128, 0.267);
+}
+button {
+    padding: 10px;
+    border: 1px solid rgb(62, 8, 124);
+    background: rgb(62, 8, 124);
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+    position: relative; 
+
+  }
+  
+  button:hover {
+    transform: translateY(-1px);
+    background-image: linear-gradient(
+      45deg,
+      rgb(62, 8, 124),
+      transparent,
+      rgb(189, 8, 92)
+    );
+    background-size: 400%;
+    animation: backNforth 1s ease-in-out 0.5s infinite alternate;
+  }
+  
+  
+
+@media (min-width: 500px) and (max-width: 768px) {
+  .results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  input[type="text"] {
+    width: 70%;
+  }
+}
+
+@media (max-width: 499px) {
+  .results {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes backNforth {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
