@@ -1,0 +1,27 @@
+img {
+  width: 5rem;
+  height: 5rem;
+  background-clip: border-box;
+  background-image: linear-gradient(45deg, blue, red, beige);
+  background-size: 1000%;
+  transition: all 1s ease-in-out;
+  animation: backfor 5s infinite alternate-reverse;
+}
+
+@keyframes backfor {
+  0% {
+    background-position: left;
+    background-image: linear-gradient(45deg, purple, red, violet);
+    filter: saturate(2);
+  }
+  50% {
+    background-position: top middle;
+    background-image: linear-gradient(85deg, silver, red, gold);
+    filter: saturate(3);
+  }
+  100% {
+    background-position: bottom right;
+    background-image: linear-gradient(15deg, teal, red, skyblue);
+    filter: saturate(1);
+}
+}
