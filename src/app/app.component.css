@@ -3,10 +3,13 @@ img {
   height: 5rem;
   background-clip: border-box;
   background-image: linear-gradient(45deg, blue, red, beige);
-  background-size: 1000%;
+  background-size: 10000%;
+  overflow-x: hidden;
   transition: all 1s ease-in-out;
   animation: backfor 5s infinite alternate-reverse;
 }
+
+
 
 @keyframes backfor {
   0% {

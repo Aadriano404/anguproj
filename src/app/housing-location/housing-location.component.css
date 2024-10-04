@@ -10,6 +10,7 @@
 
 section * {
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
 }
 
 .listing-photo {
@@ -37,7 +38,7 @@ section.listing a {
     rgb(1, 173, 79),
     rgb(41, 11, 126),
     rgb(195, 0, 255)
-  );
+  ); 
   background-size: 1000%;
   transition: all .5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
