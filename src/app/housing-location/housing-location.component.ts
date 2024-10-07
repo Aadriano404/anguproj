@@ -9,7 +9,7 @@ import { RouterLink, RouterOutlet } from '@angular/router'
   imports: [CommonModule,RouterLink,RouterOutlet],
   template: `
     <section class="listing">
-    <a [routerLink]="['/details', housingLocation.id]">Learn More</a>
+    <a class="anch" [routerLink]="['/details', housingLocation.id]">Learn More</a>
     <img
     class="listing-photo"
     [src]="housingLocation.photo"

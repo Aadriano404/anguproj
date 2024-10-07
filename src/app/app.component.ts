@@ -7,15 +7,14 @@ import { HeaderComponent } from './header/header.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HomeComponent, RouterModule,HeaderComponent],
+  imports: [HomeComponent, RouterModule],
   template: ` <main>
     <a [routerLink]="['/']">
       <header class="brand-name">
         <img class="brand-logo" src="/Sm3.png" alt="logo" aria-hidden="true" />
       </header>
-      </a>
-      <section class="content">
-      <app-header></app-header>
+    </a>
+    <section class="content">
       <router-outlet></router-outlet>
     </section>
   </main>`,
