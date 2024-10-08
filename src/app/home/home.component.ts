@@ -12,7 +12,12 @@ import { HeaderComponent } from '../header/header.component';
   template: `
     <section>
       <form>
-        <input type="text" placeholder="Filter by city" #filter />
+        <input
+          type="text"
+          placeholder="Filter by city"
+          (keydown.enter)="filterResults(filter.value, $event)"
+          #filter
+        />
         <button
           class="primary"
           type="button"
@@ -32,26 +37,33 @@ import { HeaderComponent } from '../header/header.component';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
+  readonly baseUrl = 'https://angular.dev/assets/images/tutorials/common';
   housingService: HousingService = inject(HousingService);
 
   housingLocationList: HousingLocation[] = [];
   filteredLocationList: HousingLocation[] = [];
 
   constructor() {
-    this.housingLocationList = this.housingService.getAllHousingLocations();
-    this.filteredLocationList = this.housingLocationList;
+    this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[]) => {
+      this.housingLocationList = housingLocationList;
+      this.filteredLocationList = housingLocationList;
+    });
   }
-  readonly baseUrl = 'https://angular.dev/assets/images/tutorials/common';
 
-  filterResults(text: string) {
+
+  filterResults(text: string, event?: Event) {
     if (!text) {
       this.filteredLocationList = this.housingLocationList;
       return;
     }
 
+    if (event) {
+      event.preventDefault();
+    }
+
     this.filteredLocationList = this.housingLocationList.filter(
       (housingLocation) =>
-      //MERMÃO NAO USE CURLY BRACES EM LAMBDAS EM TS, ELAS QUEBRAM...
+        //MERMÃO NAO USE CURLY BRACES EM LAMBDAS EM TS, ELAS QUEBRAM...
         housingLocation?.city.toLowerCase().includes(text.toLowerCase())
     );
   }
